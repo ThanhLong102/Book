@@ -54,10 +54,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <systemPropertyVariables>
-                           <property1>test</property1>
-                           <property2>java.runtime.version=11</property2>
-                    </systemPropertyVariables>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
