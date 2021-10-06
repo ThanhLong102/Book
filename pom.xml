@@ -15,6 +15,7 @@
     <description>Book</description>
     <properties>
         <java.version>11</java.version>
+        <scope>runtime</scope>
     </properties>
     <dependencies>
         <dependency>
