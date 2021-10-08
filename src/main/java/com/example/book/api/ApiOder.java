@@ -25,4 +25,8 @@ public class ApiOder {
         return iOderService.display();
     }
 
+    @DeleteMapping(value = "/delete/code={code}")
+    public void deleteNew(@PathVariable("code") String code) {
+        iOderService.delete(code);
+    }
 }

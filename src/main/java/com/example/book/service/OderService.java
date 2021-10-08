@@ -2,6 +2,7 @@ package com.example.book.service;
 
 import com.example.book.dto.OderDto;
 import com.example.book.entity.CustomerEntity;
+import com.example.book.entity.ItemEntity;
 import com.example.book.entity.OderEntity;
 import com.example.book.repository.CustomerRepository;
 import com.example.book.repository.OderRepository;
@@ -24,13 +25,21 @@ public class OderService implements IOderService{
         OderEntity oderEntity =new OderEntity();
         CustomerEntity customer=customerRepository.findOneById(oderDto.getCustomerId());
         oderEntity.setCode(oderDto.getCode());
+        oderEntity.setCost(oderDto.getCost());
+        oderEntity.setTotal_product(oderDto.getTotal_product());
         customer.getOder().add(oderEntity);
-        oderRepository.save(oderEntity);
+        customerRepository.save(customer);
         return oderDto;
     }
 
     @Override
     public List<OderEntity> display(){
         return (List<OderEntity>) oderRepository.findAll();
+    }
+
+    @Override
+    public void delete(String code) {
+        OderEntity newEntity=oderRepository.findOneByCode(code);
+        oderRepository.delete(newEntity);
     }
 }

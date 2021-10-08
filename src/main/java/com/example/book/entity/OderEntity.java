@@ -16,11 +16,12 @@ import java.util.Date;
 public class OderEntity {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private Long id;
-
     private String code;
 
     @CreationTimestamp
     private Date creatDate;
+
+    private Float cost;
+
+    private Long total_product;
 }

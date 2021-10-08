@@ -1,5 +1,6 @@
 package com.example.book.dto;
 
+import com.example.book.entity.Category;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -12,13 +13,13 @@ public class ItemDto {
 
     private String name;
 
-    private String type;
+    private String image;
 
     private Float price;
 
-    private String author;
+    private String describes;
 
-    private Long republish;
+    private Long inventory;
 
-    private String cover;
+    private String category_name;
 }

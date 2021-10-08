@@ -2,6 +2,7 @@ package com.example.book.api;
 
 import com.example.book.dto.ItemDto;
 import com.example.book.service.IItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,11 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/item")
 public class ApiItem {
-    private final IItemService iItemService;
-
-    public ApiItem(IItemService iItemService) {
-        this.iItemService = iItemService;
-    }
+    @Autowired
+    private IItemService iItemService;
 
     @PostMapping(value = "/create")
     public ItemDto createNew(@RequestBody ItemDto itemDto) {

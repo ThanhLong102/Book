@@ -24,7 +24,7 @@ public class Oder_ItemEntity {
     private ItemEntity item;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Oder_id",referencedColumnName = "id")
+    @JoinColumn(name = "Oder_code",referencedColumnName = "code")
     private OderEntity oder;
 
 }

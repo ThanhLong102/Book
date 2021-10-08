@@ -13,4 +13,8 @@ public class OderDto {
     private String code;
 
     private Long customerId;
+
+    private Float cost;
+
+    private Long total_product;
 }

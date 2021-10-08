@@ -9,4 +9,6 @@ public interface IOderService {
     OderDto create(OderDto oderDto);
 
     List<OderEntity> display();
+
+    void delete(String code);
 }

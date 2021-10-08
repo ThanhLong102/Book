@@ -10,11 +10,10 @@ public class ItemConverter {
         ItemEntity entity = new ItemEntity();
         entity.setId(dto.getId());
         entity.setName(dto.getName());
-        entity.setType(dto.getType());
-        entity.setAuthor(dto.getAuthor());
+        entity.setDescribes(dto.getDescribes());
+        entity.setImage(dto.getImage());
         entity.setPrice(dto.getPrice());
-        entity.setRepublish(dto.getRepublish());
-        entity.setCover(dto.getCover());
+        entity.setInventory(dto.getInventory());
         return entity;
     }
 
@@ -24,21 +23,19 @@ public class ItemConverter {
             dto.setId(entity.getId());
         }
         dto.setName(entity.getName());
-        dto.setType(entity.getType());
-        dto.setAuthor(entity.getAuthor());
+        dto.setDescribes(entity.getDescribes());
+        dto.setImage(entity.getImage());
         dto.setPrice(entity.getPrice());
-        dto.setRepublish(entity.getRepublish());
-        dto.setCover(entity.getCover());
+        dto.setInventory(entity.getInventory());
         return dto;
     }
 
     public ItemEntity toEntity(ItemDto dto, ItemEntity entity) {
         entity.setName(dto.getName());
-        entity.setType(dto.getType());
-        entity.setAuthor(dto.getAuthor());
+        entity.setDescribes(dto.getDescribes());
+        entity.setImage(dto.getImage());
         entity.setPrice(dto.getPrice());
-        entity.setRepublish(dto.getRepublish());
-        entity.setCover(dto.getCover());
+        entity.setInventory(dto.getInventory());
         return entity;
     }
 }

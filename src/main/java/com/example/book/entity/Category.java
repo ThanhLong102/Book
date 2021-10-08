@@ -5,26 +5,21 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Table(name ="item")
-public class ItemEntity {
-
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String image;
-
-    private Float price;
-
-    private String describes;
-
-    private Long inventory;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="category_id",referencedColumnName = "id")
+    private Collection<ItemEntity> itemEntities;
 }
-
