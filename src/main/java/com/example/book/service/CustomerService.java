@@ -22,13 +22,9 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public List<CustomerDto> display(){
+    public List<CustomerEntity> display(){
         List<CustomerEntity> customerEntities = (List<CustomerEntity>) customerRepository.findAll();
-        List<CustomerDto> customerDtos=new ArrayList<>();
-        for (CustomerEntity a : customerEntities){
-            customerDtos.add(customerConverter.toDTO(a));
-        }
-        return customerDtos;
+        return customerEntities;
     }
 
     @Override
