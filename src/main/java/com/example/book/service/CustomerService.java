@@ -8,7 +8,6 @@ import com.example.book.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,13 +21,9 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public List<CustomerDto> display(){
+    public List<CustomerEntity> display(){
         List<CustomerEntity> customerEntities = (List<CustomerEntity>) customerRepository.findAll();
-        List<CustomerDto> customerDtos=new ArrayList<>();
-        for (CustomerEntity a : customerEntities){
-            customerDtos.add(customerConverter.toDTO(a));
-        }
-        return customerDtos;
+        return customerEntities;
     }
 
     @Override

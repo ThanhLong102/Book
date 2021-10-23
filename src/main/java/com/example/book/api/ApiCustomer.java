@@ -1,6 +1,7 @@
 package com.example.book.api;
 
 import com.example.book.dto.CustomerDto;
+import com.example.book.entity.CustomerEntity;
 import com.example.book.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ApiCustomer {
     }
 
     @GetMapping(value = "/show")
-    public List<CustomerDto> display(){
+    public List<CustomerEntity> display(){
         return iCustomerService.display();
     }
 
