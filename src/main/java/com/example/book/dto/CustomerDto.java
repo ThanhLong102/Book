@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 public class CustomerDto {
+    private Long id;
+
     private String name;
 
     private String email;
@@ -15,5 +17,9 @@ public class CustomerDto {
     private String address;
 
     private String telephone;
+
+    private String password;
+
+    private String username;
 
 }

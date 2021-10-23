@@ -1,7 +1,7 @@
 package com.example.book.api;
 
-import com.example.book.entity.CustomerEntity;
-import com.example.book.repository.CustomerRepository;
+import com.example.book.dto.CustomerDto;
+import com.example.book.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,27 +13,21 @@ import java.util.List;
 public class ApiCustomer {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private ICustomerService iCustomerService;
 
     @PostMapping(value = "/create")
-    public CustomerEntity createNew(@RequestBody CustomerEntity customerEntity) {
-        return customerRepository.save(customerEntity);
+    public CustomerDto createNew(@RequestBody CustomerDto customerDto) {
+        return iCustomerService.update(customerDto);
     }
 
     @PutMapping(value = "/update")
-    public CustomerEntity update(@RequestBody CustomerEntity customerEntity) {
-        CustomerEntity oldCustomer =customerRepository.findOneByUsername(customerEntity.getUsername());
-        oldCustomer.setName(customerEntity.getName());
-        oldCustomer.setAddress(customerEntity.getAddress());
-        oldCustomer.setEmail(customerEntity.getEmail());
-        oldCustomer.setTelephone(customerEntity.getTelephone());
-        customerRepository.save(oldCustomer);
-        return oldCustomer;
+    public CustomerDto update(@RequestBody CustomerDto customerDto) {
+        return iCustomerService.update(customerDto);
     }
 
     @GetMapping(value = "/show")
-    public List<CustomerEntity> display(){
-        return (List<CustomerEntity>) customerRepository.findAll();
+    public List<CustomerDto> display(){
+        return iCustomerService.display();
     }
 
 }
