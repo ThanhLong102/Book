@@ -22,7 +22,12 @@ public class ApiCustomer {
 
     @PutMapping(value = "/update")
     public CustomerEntity update(@RequestBody CustomerEntity customerEntity) {
-        return customerRepository.save(customerEntity);
+        CustomerEntity oldCustomer =customerRepository.findOneByUsername(customerEntity.getUsername());
+        oldCustomer.setName(customerEntity.getName());
+        oldCustomer.setAddress(customerEntity.getAddress());
+        oldCustomer.setEmail(customerEntity.getEmail());
+        oldCustomer.setTelephone(customerEntity.getTelephone());
+        return customerRepository.save(oldCustomer);
     }
 
     @GetMapping(value = "/show")
