@@ -27,7 +27,8 @@ public class ApiCustomer {
         oldCustomer.setAddress(customerEntity.getAddress());
         oldCustomer.setEmail(customerEntity.getEmail());
         oldCustomer.setTelephone(customerEntity.getTelephone());
-        return customerRepository.save(oldCustomer);
+        customerRepository.save(oldCustomer);
+        return oldCustomer;
     }
 
     @GetMapping(value = "/show")
