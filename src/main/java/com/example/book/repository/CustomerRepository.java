@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface CustomerRepository extends PagingAndSortingRepository<CustomerEntity,Long> {
 
     CustomerEntity findOneById(Long id);
+
+    CustomerEntity findOneByName(String name);
 }

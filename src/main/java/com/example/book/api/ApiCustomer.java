@@ -20,6 +20,11 @@ public class ApiCustomer {
         return customerRepository.save(customerEntity);
     }
 
+    @PutMapping(value = "/update")
+    public CustomerEntity update(@RequestBody CustomerEntity customerEntity) {
+        return customerRepository.save(customerEntity);
+    }
+
     @GetMapping(value = "/show")
     public List<CustomerEntity> display(){
         return (List<CustomerEntity>) customerRepository.findAll();
