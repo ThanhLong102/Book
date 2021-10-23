@@ -26,7 +26,7 @@ public class ApiCustomer {
     }
 
     @GetMapping(value = "/show")
-    public List<CustomerDto> display(){
+    public List<CustomerEntity> display(){
         return iCustomerService.display();
     }
 
