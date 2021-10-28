@@ -4,6 +4,7 @@ package com.example.book.service;
 import com.example.book.converter.CustomerConverter;
 import com.example.book.dto.CustomerDto;
 import com.example.book.entity.CustomerEntity;
+import com.example.book.entity.ItemEntity;
 import com.example.book.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,5 +40,10 @@ public class CustomerService implements ICustomerService {
         return customerConverter.toDTO(customerEntity);
     }
 
+    @Override
+    public void delete(long id) {
+        CustomerEntity newEntity=customerRepository.findOneById(id);
+        customerRepository.delete(newEntity);
+    }
 
 }

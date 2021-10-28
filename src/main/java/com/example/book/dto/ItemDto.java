@@ -1,6 +1,5 @@
 package com.example.book.dto;
 
-import com.example.book.entity.Category;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

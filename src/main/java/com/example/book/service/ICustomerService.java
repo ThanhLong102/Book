@@ -9,4 +9,6 @@ public interface ICustomerService {
     List<CustomerEntity> display();
 
     CustomerDto update(CustomerDto customerDto);
+
+    void delete(long id);
 }

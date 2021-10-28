@@ -27,6 +27,7 @@ public class ItemConverter {
         dto.setImage(entity.getImage());
         dto.setPrice(entity.getPrice());
         dto.setInventory(entity.getInventory());
+        dto.setCategory_name(entity.getCategory().getName());
         return dto;
     }
 

@@ -31,4 +31,9 @@ public class ApiCustomer {
         return iCustomerService.display();
     }
 
+    @DeleteMapping(value = "/delete/id={id}")
+    public void deleteNew(@PathVariable("id") long id) {
+        iCustomerService.delete(id);
+    }
+
 }

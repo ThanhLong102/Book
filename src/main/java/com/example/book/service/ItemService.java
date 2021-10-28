@@ -45,7 +45,7 @@ public class ItemService implements IItemService{
         } else {
             itemEntity = itemConverter.toEntity(itemDto);
         }
-        category.getItemEntities().add(itemEntity);
+        itemEntity.setCategory(category);
         itemEntity = itemRepository.save(itemEntity);
         return itemConverter.toDTO(itemEntity);
     }

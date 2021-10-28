@@ -1,5 +1,6 @@
 package com.example.book.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -19,12 +20,12 @@ public class Oder_ItemEntity {
 
     private Long quantity;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Item_id",referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name="item_id",referencedColumnName = "id")
     private ItemEntity item;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Oder_code",referencedColumnName = "code")
+    @ManyToOne
+    @JoinColumn(name="oder_code",referencedColumnName = "code")
+    @JsonIgnore
     private OderEntity oder;
-
 }

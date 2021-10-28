@@ -29,7 +29,6 @@ public class CustomerEntity {
 
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="customer_id",referencedColumnName = "id")
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private Collection<OderEntity> oder;
 }

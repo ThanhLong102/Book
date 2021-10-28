@@ -19,7 +19,6 @@ public class Category {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="category_id",referencedColumnName = "id")
+    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
     private Collection<ItemEntity> itemEntities;
 }
