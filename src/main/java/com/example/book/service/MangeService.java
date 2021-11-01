@@ -3,6 +3,7 @@ package com.example.book.service;
 
 import com.example.book.converter.MangesConverter;
 import com.example.book.dto.ManagesOder;
+import com.example.book.entity.ItemEntity;
 import com.example.book.entity.Oder_ItemEntity;
 import com.example.book.repository.ItemRepository;
 import com.example.book.repository.ManagesRepository;
@@ -40,9 +41,14 @@ public class MangeService implements IManageService{
         } else {
             oder_item = mangesConverter.toEntity(managesOder);
         }
-        oder_item.setItem(itemRepository.findOneById(managesOder.getItemId()));
-        oder_item.setOder(oderRepository.findOneByCode(managesOder.getCode()));
-        managesRepository.save(oder_item);
+        ItemEntity itemEntity=itemRepository.findOneById(managesOder.getItemId());
+        if(managesOder.getQuantity()<=itemEntity.getInventory()){
+            itemEntity.setInventory(itemEntity.getInventory()-managesOder.getQuantity());
+            itemRepository.save(itemEntity);
+            oder_item.setItem(itemEntity);
+            oder_item.setOder(oderRepository.findOneByCode(managesOder.getCode()));
+            managesRepository.save(oder_item);
+        }
         return managesOder;
     }
 
