@@ -16,5 +16,4 @@ public class OderDto {
 
     private Float cost;
 
-    private Long total_product;
 }

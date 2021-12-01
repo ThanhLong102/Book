@@ -26,7 +26,6 @@ public class OderService implements IOderService{
         CustomerEntity customer=customerRepository.findOneById(oderDto.getCustomerId());
         oderEntity.setCode(oderDto.getCode());
         oderEntity.setCost(oderDto.getCost());
-        oderEntity.setTotal_product(oderDto.getTotal_product());
         oderEntity.setCustomer(customer);
         oderRepository.save(oderEntity);
         return oderDto;

@@ -25,8 +25,6 @@ public class OderEntity {
 
     private Float cost;
 
-    private Long total_product;
-
     @ManyToOne
     @JoinColumn(name="customer_id",referencedColumnName = "id")
     @JsonIgnore
