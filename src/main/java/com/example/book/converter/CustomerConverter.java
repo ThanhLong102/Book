@@ -37,6 +37,7 @@ public class CustomerConverter {
         entity.setTelephone(dto.getTelephone());
         entity.setEmail(dto.getEmail());
         entity.setAddress(dto.getAddress());
+        entity.setPassword(dto.getPassword());
         return entity;
     }
 }
